@@ -10,12 +10,14 @@ file.readFileSync('input.txt').toString().split("\n")
       // maybe create 2 variables, one for name, one for type list. 
       // Still need to uppercase first letter of name
       .then(data => {
-        console.log(`${data.name}: ${data.types.map(classification => classification.type.name).join(', ')}`)
-        .catch(error => console.error(error))
-      });
+        console.log(`${capitalize(data.name)}: ${data.types.map(classification => classification.type.name).join(', ')}`)
+        })
+      .catch(error => console.error(error));
   });
 /* currently returns: 
 * pikachu: electric
 * charizard: fire, flying
 *
 */
+function capitalize (string) { return string[0].toUpperCase() + string.substr(1)}
+//function toLowerCase (str) { return str.toLowerCase() } 
