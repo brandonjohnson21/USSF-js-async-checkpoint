@@ -11,7 +11,7 @@ file.readFileSync('input.txt').toString().split("\n")
       // Still need to uppercase first letter of name
       .then(data => {
         console.log(`${data.name}: ${data.types.map(classification => classification.type.name).join(', ')}`)
-        .catch(error => console.error)
+        .catch(error => console.error(error))
       });
   });
 /* currently returns: 
