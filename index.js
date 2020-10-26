@@ -2,7 +2,7 @@ var file = require('fs');
 const fetch = require('node-fetch');
 // we probably want to break this out into an async function?
 // we would need to use callbacks or use (error,fileData)=>{} notation
-file.readFileSync('input.txt').toString().split("\n")
+file.readFileSync('input.txt').toString().split("\n").filter(line => line.length > 0)
   .forEach(pokemon => {
       fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
       .then(response => response.json()) 
