@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var file = require('fs');
 const fetch = require('node-fetch');
 // we probably want to break this out into an async function?
